@@ -1,0 +1,80 @@
+[gd_scene load_steps=11 format=3 uid="uid://dt0cq454r88t3"]
+
+[ext_resource type="Script" path="res://Scenes/MONs/baby_vmon.gd" id="1_ocsb6"]
+[ext_resource type="Texture2D" uid="uid://cxigv0lno3qyo" path="res://Images/Sprites/VM_BabyMon.png" id="1_rg1fu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_65e8p"]
+atlas = ExtResource("1_rg1fu")
+region = Rect2(0, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mpwio"]
+atlas = ExtResource("1_rg1fu")
+region = Rect2(16, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mjeg2"]
+atlas = ExtResource("1_rg1fu")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_123ks"]
+atlas = ExtResource("1_rg1fu")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_itnyo"]
+atlas = ExtResource("1_rg1fu")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lx820"]
+atlas = ExtResource("1_rg1fu")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ba5th"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_65e8p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mpwio")
+}],
+"loop": true,
+"name": &"Happy",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mjeg2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_123ks")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_itnyo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lx820")
+}],
+"loop": true,
+"name": &"Sad",
+"speed": 1.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rlelv"]
+radius = 5.50091
+
+[node name="BabyVMon" type="CharacterBody2D"]
+scale = Vector2(10, 10)
+script = ExtResource("1_ocsb6")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -2.4)
+sprite_frames = SubResource("SpriteFrames_ba5th")
+animation = &"Idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.1, 0.0999999)
+shape = SubResource("CircleShape2D_rlelv")

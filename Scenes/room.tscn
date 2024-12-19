@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://bnao0momrcppa"]
+
+[ext_resource type="Texture2D" uid="uid://btmj4tto7d8nl" path="res://Images/Background/TEMPORARY_Lab_Background.jpg" id="1_0rdhe"]
+[ext_resource type="PackedScene" uid="uid://dt0cq454r88t3" path="res://Scenes/MONs/baby_vmon.tscn" id="1_fsqwm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nrp7b"]
+size = Vector2(1162.5, 98.5)
+
+[node name="Room" type="Node2D"]
+
+[node name="TemporaryLabBackground" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.435294)
+position = Vector2(563, 227)
+scale = Vector2(2.17879, 2.57121)
+texture = ExtResource("1_0rdhe")
+
+[node name="BabyVMon" parent="." instance=ExtResource("1_fsqwm")]
+position = Vector2(565, 545)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(582.75, 652.75)
+shape = SubResource("RectangleShape2D_nrp7b")
+
+[node name="Panel" type="Panel" parent="."]
+visible = false
+modulate = Color(0.211765, 0.211765, 0.211765, 0.6)
+offset_left = -16.0
+offset_top = 601.0
+offset_right = 1167.0
+offset_bottom = 699.0

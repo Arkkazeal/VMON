@@ -1,0 +1,150 @@
+[gd_scene load_steps=21 format=3 uid="uid://chxxde4ipa4ch"]
+
+[ext_resource type="Texture2D" uid="uid://cgdsjb34mc2y0" path="res://Images/Background/Hatchery_Background.png" id="1_cpoko"]
+[ext_resource type="Texture2D" uid="uid://dfscgta2d1m8n" path="res://Images/Sprites/VM_Egg1.png" id="2_g8i0l"]
+[ext_resource type="Script" path="res://Scripts/Egg.gd" id="3_lbn3d"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_21pja"]
+atlas = ExtResource("2_g8i0l")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5lnls"]
+atlas = ExtResource("2_g8i0l")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sijm1"]
+atlas = ExtResource("2_g8i0l")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m0cdf"]
+atlas = ExtResource("2_g8i0l")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k0dkx"]
+atlas = ExtResource("2_g8i0l")
+region = Rect2(160, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aotjn"]
+atlas = ExtResource("2_g8i0l")
+region = Rect2(128, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wpr0e"]
+atlas = ExtResource("2_g8i0l")
+region = Rect2(224, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xlfhe"]
+atlas = ExtResource("2_g8i0l")
+region = Rect2(256, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_34exg"]
+atlas = ExtResource("2_g8i0l")
+region = Rect2(288, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lw4sf"]
+atlas = ExtResource("2_g8i0l")
+region = Rect2(320, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t8a4q"]
+atlas = ExtResource("2_g8i0l")
+region = Rect2(352, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eul5p"]
+atlas = ExtResource("2_g8i0l")
+region = Rect2(384, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ipe8b"]
+atlas = ExtResource("2_g8i0l")
+region = Rect2(416, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vegel"]
+atlas = ExtResource("2_g8i0l")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vbum0"]
+atlas = ExtResource("2_g8i0l")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iytmk"]
+atlas = ExtResource("2_g8i0l")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qr0u5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_21pja")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5lnls")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sijm1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m0cdf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k0dkx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m0cdf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aotjn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wpr0e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xlfhe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_34exg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lw4sf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t8a4q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eul5p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ipe8b")
+}],
+"loop": false,
+"name": &"Hatching",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vegel")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vbum0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iytmk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vbum0")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 2.0
+}]
+
+[node name="Hatchery" type="Node2D"]
+
+[node name="HatcheryBackground" type="Sprite2D" parent="."]
+position = Vector2(559, 323)
+scale = Vector2(5.06641, 5.06641)
+texture = ExtResource("1_cpoko")
+
+[node name="Egg" type="AnimatedSprite2D" parent="."]
+position = Vector2(563, 425)
+scale = Vector2(7.75, 7.75)
+sprite_frames = SubResource("SpriteFrames_qr0u5")
+animation = &"Hatching"
+script = ExtResource("3_lbn3d")
